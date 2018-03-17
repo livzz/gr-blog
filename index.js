@@ -14,6 +14,7 @@ app.set('view engine', 'pug'); // we use the engine pug, mustache or EJS work gr
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 var config = {
   apiKey: 'AIzaSyAx0_nw4HxTFN09xz2ctPvxqx2dSCY1ek8',
@@ -24,7 +25,25 @@ var config = {
   messagingSenderId: '137446068910',
 };
 
+if (!Firebase.apps.length) {
+  Firebase.initializeApp(config);
+}
+
+app.use((req, res, next) => {
+  res.locals.Firebase = Firebase;
+  next();
+});
+
 // GET request at endpoint '/'
 app.use('/', routes);
+
+// If that above routes didnt work, we 404 them and forward to error handler
+app.use(errorHandlers.notFound);
+
+/* Development Error Handler - Prints stack trace */
+app.use(errorHandlers.developmentErrors);
+
+// production error handler
+app.use(errorHandlers.productionErrors);
 
 module.exports.handler = serverless(app);
