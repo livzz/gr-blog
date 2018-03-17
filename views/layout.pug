@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width,initial-scale=1.0')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
+        link(rel='stylesheet', href='/css/main.css')
+        title Global Reach Blog Page
+    body
+        ul.nav.justify-content-center
+            li.nav-item
+                a.nav-link.active(href='/abroad') Study abroad
+            li.nav-item
+                a.nav-link(href='/scholarship') Scholarship
+            li.nav-item
+                a.nav-link(href='/lifestyle') Lifestyle
+            li.nav-item
+                a.nav-link(href='/exams') Exams
+            li.nav-item
+                a.nav-link(href='/tips') Tips
+            li.nav-item
+                a.nav-link(href='/contact') Contact
+        div.container
+            hr
+            block content
+                p This is the default Page

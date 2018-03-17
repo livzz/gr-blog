@@ -1,7 +1,7 @@
 {
-  "name": "jurassicpork",
+  "name": "serverless-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "A serverless website!!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,6 +14,8 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "firebase": "^4.9.0",
+    "path": "^0.12.7",
+    "pug": "2.0.0-beta6",
     "serverless-http": "^1.5.3"
   }
 }

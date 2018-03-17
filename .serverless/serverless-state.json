@@ -1,8 +1,8 @@
 {
   "service": {
-    "service": "my-express-application",
+    "service": "serverless-website",
     "serviceObject": {
-      "name": "my-express-application"
+      "name": "serverless-website"
     },
     "provider": {
       "stage": "prod",
@@ -22,7 +22,7 @@
           "AppLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/my-express-application-prod-app"
+              "LogGroupName": "/aws/lambda/serverless-website-prod-app"
             }
           },
           "IamRoleLambdaExecution": {
@@ -51,7 +51,7 @@
                       "-",
                       [
                         "prod",
-                        "my-express-application",
+                        "serverless-website",
                         "lambda"
                       ]
                     ]
@@ -66,7 +66,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/my-express-application-prod-app:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-website-prod-app:*"
                           }
                         ]
                       },
@@ -77,7 +77,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/my-express-application-prod-app:*:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/serverless-website-prod-app:*:*"
                           }
                         ]
                       }
@@ -90,7 +90,7 @@
                 "Fn::Join": [
                   "-",
                   [
-                    "my-express-application",
+                    "serverless-website",
                     "prod",
                     "us-east-1",
                     "lambdaRole"
@@ -106,9 +106,9 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/my-express-application/prod/1517312922307-2018-01-30T11:48:42.307Z/my-express-application.zip"
+                "S3Key": "serverless/serverless-website/prod/1521204530968-2018-03-16T12:48:50.968Z/serverless-website.zip"
               },
-              "FunctionName": "my-express-application-prod-app",
+              "FunctionName": "serverless-website-prod-app",
               "Handler": "index.handler",
               "MemorySize": 1024,
               "Role": {
@@ -125,20 +125,20 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "AppLambdaVersionCaxyo0LXX09kNzMG2czBVF1shk1Jwre5rU9UWdrGrOo": {
+          "AppLambdaVersion7j3KOOHK7K7kc1RrsenOvLuVyapRMXjgxkOX5LBQI": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AppLambdaFunction"
               },
-              "CodeSha256": "UJIxxjPiyZ37vaQ2+IAesvKkQR/rFoYNBh1R6njgB/w="
+              "CodeSha256": "CVbgaWGgy8StiyBBEge+FmJNd6jBTXxyq+Fxs04dklQ="
             }
           },
           "ApiGatewayRestApi": {
             "Type": "AWS::ApiGateway::RestApi",
             "Properties": {
-              "Name": "prod-my-express-application",
+              "Name": "prod-serverless-website",
               "EndpointConfiguration": {
                 "Types": [
                   "EDGE"
@@ -242,7 +242,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1517312922519": {
+          "ApiGatewayDeployment1521204531171": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -298,7 +298,7 @@
           "AppLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AppLambdaVersionCaxyo0LXX09kNzMG2czBVF1shk1Jwre5rU9UWdrGrOo"
+              "Ref": "AppLambdaVersion7j3KOOHK7K7kc1RrsenOvLuVyapRMXjgxkOX5LBQI"
             }
           },
           "ServiceEndpoint": {
@@ -347,15 +347,15 @@
             "http": "ANY {proxy+}"
           }
         ],
-        "name": "my-express-application-prod-app",
+        "name": "serverless-website-prod-app",
         "package": {},
         "vpc": {}
       }
     },
-    "artifact": "D:\\MyPro\\lambdaAWS\\jurassicpork\\.serverless\\my-express-application.zip"
+    "artifact": "D:\\MyPro\\lambdaAWS\\lambda-website\\.serverless\\serverless-website.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/my-express-application/prod/1517312922307-2018-01-30T11:48:42.307Z",
-    "artifact": "my-express-application.zip"
+    "artifactDirectoryName": "serverless/serverless-website/prod/1521204530968-2018-03-16T12:48:50.968Z",
+    "artifact": "serverless-website.zip"
   }
 }
