@@ -5,7 +5,6 @@ exports.firebaseMiddleware = (req, res, next) => {
     .once('value')
     .then(snap => (req.data = snap.val()))
     .then(() => next());
-  // req.data = 'Working';
 };
 
 exports.homePage = (req, res) => {

@@ -1,7 +1,12 @@
 extends layout
 
 block content
+    include ./featured-post.pug
     div
         p.text-center Hello this is #{currentPath}
-        each item in data
-            p.text-center #{item.title}
+        p.h4 Our Latest Articles:
+        div.row
+            div.col-8
+                include ./latest-article-cards.pug
+            div.col
+                include ./latest-article-list.pug

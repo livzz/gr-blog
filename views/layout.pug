@@ -7,22 +7,49 @@ html
         link(rel='stylesheet', href='/css/main.css')
         title Global Reach Blog Page
     body
-        p.text-center Blog
+        br
+        div.container
+            div.row
+                div.col
+                    div.text-left Go to Global Reach Home
+                div.col
+                    div.h2.text-center 
+                        a(href='/') Blog
+                div.col
+                    div.text-right Search
         br
         ul.nav.justify-content-center
             li.nav-item
-                a.nav-link.active(href='/abroad') Study abroad
+                a.nav-link(href='/abroad' class=(currentPath.startsWith('/abroad') ? 'active' : '')) Study abroad
             li.nav-item
-                a.nav-link(href='/scholarship') Scholarship
+                a.nav-link(href='/scholarship' class=(currentPath.startsWith('/scholarship') ? 'active' : '')) Scholarship
             li.nav-item
-                a.nav-link(href='/lifestyle') Lifestyle
+                a.nav-link(href='/lifestyle' class=(currentPath.startsWith('/lifestyle') ? 'active' : '')) Lifestyle
             li.nav-item
-                a.nav-link(href='/exams') Exams
+                a.nav-link(href='/exams' class=(currentPath.startsWith('/exams') ? 'active' : '')) Exams
             li.nav-item
-                a.nav-link(href='/tips') Tips
+                a.nav-link(href='/tips' class=(currentPath.startsWith('/tips') ? 'active' : '')) Tips
             li.nav-item
-                a.nav-link(href='/contact') Contact
+                a.nav-link(href='/contact' class=(currentPath.startsWith('/contact') ? 'active' : '')) Contact
         div.container
             hr
+            br
             block content
                 p This is the default Page
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
