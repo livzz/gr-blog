@@ -1,0 +1,23 @@
+mixin article-cards(one, two)
+    div.row
+        div.col
+            div
+                img.img-thumbnail(src= one.content[0].image, alt= one.title)
+                p.h3= one.title
+                br
+                p= one.summary
+        div.col
+            if two
+                div
+                    img.img-thumbnail(src= two.content[0].image, alt= two.title)
+                    p.h3= two.title
+                    br
+                    p= two.summary
+
+mixin article-list(index,post)
+    div.row
+        div.col-auto
+            div.text-center= index
+        div.col
+            div= post.title
+        br

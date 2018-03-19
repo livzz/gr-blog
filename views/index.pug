@@ -1,4 +1,5 @@
 extends layout
+include ./mixins.pug
 
 block content
     include ./featured-post.pug
@@ -7,6 +8,16 @@ block content
         p.h4 Our Latest Articles:
         div.row
             div.col-8
-                include ./latest-article-cards.pug
+                - for (var i = 0; i < data.length ; i+=2) {
+                    - if(data.length === i+1 && data.length % 2 !== 0) {
+                        +article-cards(data[i],null)
+                    - break 
+                    - }
+                    +article-cards(data[i],data[i+1])
+                - }
             div.col
-                include ./latest-article-list.pug
+                div.bg-secondary.text-white
+                    p Our Latest Articles:
+                        - for (var i = 0; i < data.slice(0,4).length ; i++) {
+                            +article-list(i+1,data[i])
+                        - }
