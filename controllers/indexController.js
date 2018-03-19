@@ -3,10 +3,8 @@ exports.firebaseMiddleware = (req, res, next) => {
     .database()
     .ref('blogs')
     .once('value')
-    .then(snap => {
-      req.data = snap.val();
-      next();
-    });
+    .then(snap => (req.data = snap.val()))
+    .then(() => next());
   // req.data = 'Working';
 };
 

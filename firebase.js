@@ -1,3 +1,5 @@
+const Firebase = require('firebase');
+
 var config = {
   apiKey: 'AIzaSyA70K08qV46ap3yeQX3lIEM3NxgTIco_6c',
   authDomain: 'mowglitrails-1512388008487.firebaseapp.com',
@@ -6,3 +8,9 @@ var config = {
   storageBucket: 'mowglitrails-1512388008487.appspot.com',
   messagingSenderId: '466354595530',
 };
+
+if (!Firebase.apps.length) {
+  Firebase.initializeApp(config);
+}
+
+module.exports = Firebase;
