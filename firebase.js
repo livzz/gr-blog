@@ -1,12 +1,12 @@
 const Firebase = require('firebase');
 
 var config = {
-  apiKey: 'AIzaSyA70K08qV46ap3yeQX3lIEM3NxgTIco_6c',
-  authDomain: 'mowglitrails-1512388008487.firebaseapp.com',
-  databaseURL: 'https://mowglitrails-1512388008487.firebaseio.com',
-  projectId: 'mowglitrails-1512388008487',
-  storageBucket: 'mowglitrails-1512388008487.appspot.com',
-  messagingSenderId: '466354595530',
+  apiKey: 'AIzaSyCvGB9LKTvtVn8LOx0j_d7anLz27eIVk90',
+  authDomain: 'gr-blog-42a8e.firebaseapp.com',
+  databaseURL: 'https://gr-blog-42a8e.firebaseio.com',
+  projectId: 'gr-blog-42a8e',
+  storageBucket: 'gr-blog-42a8e.appspot.com',
+  messagingSenderId: '51529782072',
 };
 
 if (!Firebase.apps.length) {
