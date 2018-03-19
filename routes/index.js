@@ -9,7 +9,7 @@ const indexController = require('../controllers/indexController');
 // const contactController = require('../controllers/contactControllers');
 
 // Do work here
-router.get('/', indexController.homePage);
+router.get('/', indexController.firebaseMiddleware, indexController.homePage);
 router.get('/abroad', indexController.homePage);
 router.get('/scholarship', indexController.homePage);
 router.get('/lifestyle', indexController.homePage);

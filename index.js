@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path');
 const serverless = require('serverless-http');
 const express = require('express');
@@ -5,7 +7,9 @@ const axios = require('axios');
 const bodyParser = require('body-parser');
 const Firebase = require('firebase');
 const app = express();
+
 const routes = require('./routes/index');
+// const errorHandlers = require('./handlers/errorHandlers');
 
 app.set('views', path.join(__dirname, 'views')); // this is the folder where we keep our pug files
 app.set('view engine', 'pug'); // we use the engine pug, mustache or EJS work great too
@@ -17,12 +21,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var config = {
-  apiKey: 'AIzaSyAx0_nw4HxTFN09xz2ctPvxqx2dSCY1ek8',
-  authDomain: 'jurassic-pork.firebaseapp.com',
-  databaseURL: 'https://jurassic-pork.firebaseio.com',
-  projectId: 'jurassic-pork',
-  storageBucket: 'jurassic-pork.appspot.com',
-  messagingSenderId: '137446068910',
+  apiKey: 'AIzaSyA70K08qV46ap3yeQX3lIEM3NxgTIco_6c',
+  authDomain: 'mowglitrails-1512388008487.firebaseapp.com',
+  databaseURL: 'https://mowglitrails-1512388008487.firebaseio.com',
+  projectId: 'mowglitrails-1512388008487',
+  storageBucket: 'mowglitrails-1512388008487.appspot.com',
+  messagingSenderId: '466354595530',
 };
 
 if (!Firebase.apps.length) {
@@ -30,20 +34,21 @@ if (!Firebase.apps.length) {
 }
 
 app.use((req, res, next) => {
-  res.locals.Firebase = Firebase;
+  res.locals.firebase = Firebase;
+  res.locals.currentPath = req.path;
   next();
 });
 
 // GET request at endpoint '/'
 app.use('/', routes);
 
-// If that above routes didnt work, we 404 them and forward to error handler
-app.use(errorHandlers.notFound);
+// // If that above routes didnt work, we 404 them and forward to error handler
+// app.use(errorHandlers.notFound);
 
-/* Development Error Handler - Prints stack trace */
-app.use(errorHandlers.developmentErrors);
+// /* Development Error Handler - Prints stack trace */
+// app.use(errorHandlers.developmentErrors);
 
-// production error handler
-app.use(errorHandlers.productionErrors);
+// // production error handler
+// app.use(errorHandlers.productionErrors);
 
 module.exports.handler = serverless(app);

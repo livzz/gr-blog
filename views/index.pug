@@ -3,3 +3,5 @@ extends layout
 block content
     div
         p.text-center Hello this is #{currentPath}
+        each item in data
+            p.text-center #{item.title}
