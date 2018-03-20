@@ -5,20 +5,18 @@ exports.firebaseMiddleware = (req, res, next) => {
     .once('value')
     .then(snap => snap.val())
     .then(data => {
-      let list = [];
       for (let item in data) {
-        if (data[item].category === req.path.slice(1)) {
-          list.push(data[item]);
+        if (data[item].slug === req.params.slug) {
+          return data[item];
         }
       }
-      return list;
     })
     .then(data => (req.data = data))
     .then(() => next());
 };
 
 exports.main = (req, res) => {
-  res.render('index', {
+  res.render('post', {
     data: req.data
   });
 };
