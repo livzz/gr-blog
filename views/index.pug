@@ -18,6 +18,6 @@ block content
             div.col
                 div.bg-secondary.text-white
                     p Our Latest Articles:
-                        - for (var i = 0; i < data.slice(0,4).length ; i++) {
-                            +article-list(i+1,data[i])
+                        - for (var i = 0; i < list.slice(0,4).length ; i++) {
+                            +article-list(i+1,list[i])
                         - }

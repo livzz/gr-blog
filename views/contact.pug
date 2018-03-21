@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    br
+    form
+        .form-row
+            .form-group.col-md-6
+                label(for='inputEmail4') Name
+                input#inputEmail4.form-control(type='text', placeholder='Name' v-model='name')
+            .form-group.col-md-6
+                label(for='inputPassword4') Email
+                input#inputPassword4.form-control(type='email', placeholder='Email' v-model='email')
+        .form-group
+                label(for='inputAddress') Subject
+                input#inputAddress.form-control(type='text', placeholder='Subject' v-model='subject')
+        .form-group
+                label(for='inputAddress2') Message
+                textarea.form-control(rows="3", placeholder='Your Message' v-model='message')
+        button.btn.btn-primary(type='submit' v-on:click='send') Send
+
+            br
+            br
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js')
+    script(src="/js/contact.js")

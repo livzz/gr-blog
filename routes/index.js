@@ -1,36 +1,41 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const indexController = require('../controllers/indexController');
-const abroadController = require('../controllers/abroadController');
-const scholarshipController = require('../controllers/scholarshipController');
-const lifestyleController = require('../controllers/lifestyleController');
-const examsController = require('../controllers/examsController');
-const tipsController = require('../controllers/tipsController');
-const contactController = require('../controllers/contactController');
-const postController = require('../controllers/postController');
+const indexController = require("../controllers/indexController");
+const abroadController = require("../controllers/abroadController");
+const scholarshipController = require("../controllers/scholarshipController");
+const lifestyleController = require("../controllers/lifestyleController");
+const examsController = require("../controllers/examsController");
+const tipsController = require("../controllers/tipsController");
+const contactController = require("../controllers/contactController");
+const postController = require("../controllers/postController");
+const sharedController = require("../controllers/sharedControllers");
 
 // Do work here
-router.get('/', indexController.firebaseMiddleware, indexController.homePage);
+router.get("/", indexController.firebaseMiddleware, indexController.homePage);
 router.get(
-  '/abroad',
-  abroadController.firebaseMiddleware,
-  abroadController.main
+  "/abroad",
+  sharedController.firebaseMiddleware,
+  sharedController.main
 );
 router.get(
-  '/scholarship',
-  scholarshipController.firebaseMiddleware,
-  scholarshipController.main
+  "/scholarship",
+  sharedController.firebaseMiddleware,
+  sharedController.main
 );
 router.get(
-  '/lifestyle',
-  scholarshipController.firebaseMiddleware,
-  scholarshipController.main
+  "/lifestyle",
+  sharedController.firebaseMiddleware,
+  sharedController.main
 );
-router.get('/exams', examsController.firebaseMiddleware, examsController.main);
-router.get('/tips', tipsController.firebaseMiddleware, tipsController.main);
-router.get('/contact', indexController.homePage);
 router.get(
-  '/post/:slug',
+  "/exams",
+  sharedController.firebaseMiddleware,
+  sharedController.main
+);
+router.get("/tips", sharedController.firebaseMiddleware, sharedController.main);
+router.get("/contact", contactController.main);
+router.get(
+  "/post/:slug",
   postController.firebaseMiddleware,
   postController.main
 );

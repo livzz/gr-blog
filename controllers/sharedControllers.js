@@ -5,22 +5,34 @@ exports.firebaseMiddleware = (req, res, next) => {
     .once("value")
     .then(snap => snap.val())
     .then(data => {
-      req.data = data;
       req.list = data;
+      return data;
+    })
+    .then(data => {
       for (let item in data) {
         if (data[item].type === "featured") {
           req.featured = data[item];
-          return;
+          return data;
         }
       }
+    })
+    .then(data => {
+      let list = [];
+      for (let item in data) {
+        if (data[item].category === req.path.slice(1)) {
+          list.push(data[item]);
+        }
+      }
+      req.data = list;
+      return;
     })
     .then(() => next());
 };
 
-exports.homePage = (req, res) => {
+exports.main = (req, res) => {
   res.render("index", {
     data: req.data,
-    list: req.data,
+    list: req.list,
     featured: req.featured
   });
 };

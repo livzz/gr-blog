@@ -2,7 +2,7 @@ exports.firebaseMiddleware = (req, res, next) => {
   res.locals.firebase
     .database()
     .ref()
-    .once('value')
+    .once("value")
     .then(snap => snap.val())
     .then(data => {
       let list = [];
@@ -18,7 +18,9 @@ exports.firebaseMiddleware = (req, res, next) => {
 };
 
 exports.main = (req, res) => {
-  res.render('index', {
-    data: req.data
+  res.render("index", {
+    data: req.data,
+    list: req.list,
+    featured: req.featured
   });
 };
