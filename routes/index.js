@@ -9,14 +9,15 @@ const tipsController = require("../controllers/tipsController");
 const contactController = require("../controllers/contactController");
 const postController = require("../controllers/postController");
 const sharedController = require("../controllers/sharedControllers");
+const searchController = require("../controllers/searchController");
 
 // Do work here
 router.get("/", indexController.firebaseMiddleware, indexController.homePage);
-router.get(
-  "/abroad",
-  sharedController.firebaseMiddleware,
-  sharedController.main
-);
+// router.get(
+//   "/abroad",
+//   sharedController.firebaseMiddleware,
+//   sharedController.main
+// );
 router.get(
   "/scholarship",
   sharedController.firebaseMiddleware,
@@ -38,6 +39,12 @@ router.get(
   "/post/:slug",
   postController.firebaseMiddleware,
   postController.main
+);
+
+router.get(
+  "/search",
+  searchController.firebaseMiddleware,
+  searchController.main
 );
 
 module.exports = router;

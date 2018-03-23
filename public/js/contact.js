@@ -8,10 +8,16 @@ new Vue({
   },
   methods: {
     send: function() {
-      console.log("Name: ", this.name);
-      console.log("Email: ", this.email);
-      console.log("Reason: ", this.reason);
-      console.log("Message: ", this.message);
+      if (
+        this.name === "" ||
+        this.email === "" ||
+        this.subject === "" ||
+        this.message === ""
+      ) {
+        toastr.error("None of the fields can be empty!!");
+      } else {
+        toastr.success("We will get in touch soon!!");
+      }
     }
   }
 });

@@ -4,6 +4,8 @@ html
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width,initial-scale=1.0')
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
+        script(defer='', src='https://use.fontawesome.com/releases/v5.0.8/js/solid.js', integrity='sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l', crossorigin='anonymous')
+        script(defer='', src='https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js', integrity='sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c', crossorigin='anonymous')
         link(rel='stylesheet', href='/css/main.css')
         title Global Reach Blog Page
     body
@@ -11,16 +13,19 @@ html
         div.container
             div.row
                 div.col
-                    div.text-left Go to Global Reach Home
+                    div.text-left.header-link
+                        a(href='http://www.globalreach.in/') Go to Global Reach Home
                 div.col
                     div.h2.text-center
                         a(href='/') Blog
                 div.col
-                    div.text-right Search
+                    div.text-right.header-link
+                        form(action="/search", method="get")
+                            input(type="text" name="post" placeholder="Search..")
         br
         ul.nav.justify-content-center
             li.nav-item
-                a.nav-link(href='/abroad' class=(currentPath.startsWith('/abroad') ? 'active' : '')) Study abroad
+                a.nav-link(href='/' class=(currentPath.startsWith('/') ? 'active' : '')) Study abroad
             li.nav-item
                 a.nav-link(href='/scholarship' class=(currentPath.startsWith('/scholarship') ? 'active' : '')) Scholarship
             li.nav-item

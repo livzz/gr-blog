@@ -2,10 +2,14 @@ div.row
     div.col
         img.featured-image(src='https://www.w3schools.com/howto/img_fjords.jpg', alt='Smiley face')
     div.col
-        p.h3 #{featured.title}
-        div.d-inline 17th March, 2018
-        div.d-inline &nbsp &nbsp &nbsp
-        div.d-inline By - #{featured.author} 
-        br
-        br
-        p #{featured.summary}
+        div
+            p.h3 #{featured.title}
+            div.d-inline 17th March, 2018
+            div.d-inline &nbsp &nbsp &nbsp
+            div.d-inline By - #{featured.author} 
+            br
+            br
+            p #{featured.summary}
+            br
+            div.d-flex.align-items-end
+                a(href="/post/"+featured.slug).btn.btn-info.text-white Read More

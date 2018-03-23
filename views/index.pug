@@ -2,19 +2,29 @@ extends layout
 include ./mixins.pug
 
 block content
-    include ./featured-post.pug
+    if featured
+        include ./featured-post.pug
     div
-        p.text-center Hello this is #{currentPath}
-        p.h4 Our Latest Articles:
+        br
+        if !search
+            p.h4 Our Latest Articles:
+        else 
+            p.h4 Result:
         div.row
             div.col-8
+                - if (data.length !== 0){
                 - for (var i = 0; i < data.length ; i+=2) {
                     - if(data.length === i+1 && data.length % 2 !== 0) {
                         +article-cards(data[i],null)
                     - break 
                     - }
                     +article-cards(data[i],data[i+1])
+                -  }
                 - }
+                - else {
+                    div
+                        .text-center Sorry no post found!! 
+                -}
             div.col
                 div.bg-secondary.text-white
                     p Our Latest Articles:

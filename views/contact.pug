@@ -2,7 +2,7 @@ extends layout
 
 block content
     br
-    form
+    div#app
         .form-row
             .form-group.col-md-6
                 label(for='inputEmail4') Name
@@ -13,12 +13,14 @@ block content
         .form-group
                 label(for='inputAddress') Subject
                 input#inputAddress.form-control(type='text', placeholder='Subject' v-model='subject')
-        .form-group
+        .form-group 
                 label(for='inputAddress2') Message
                 textarea.form-control(rows="3", placeholder='Your Message' v-model='message')
-        button.btn.btn-primary(type='submit' v-on:click='send') Send
-
-            br
-            br
+        button.btn.btn-primary.float-right(v-on:click='send') Send
+        br
+        br
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css")
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js', integrity='sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=', crossorigin='anonymous')
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js")
     script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js')
     script(src="/js/contact.js")
