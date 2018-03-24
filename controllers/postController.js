@@ -1,8 +1,8 @@
 exports.firebaseMiddleware = (req, res, next) => {
   res.locals.firebase
     .database()
-    .ref()
-    .once('value')
+    .ref("blogs")
+    .once("value")
     .then(snap => snap.val())
     .then(data => {
       for (let item in data) {
@@ -16,7 +16,7 @@ exports.firebaseMiddleware = (req, res, next) => {
 };
 
 exports.main = (req, res) => {
-  res.render('post', {
+  res.render("post", {
     data: req.data
   });
 };

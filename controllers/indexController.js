@@ -1,14 +1,21 @@
 exports.firebaseMiddleware = (req, res, next) => {
   res.locals.firebase
     .database()
-    .ref()
+    .ref("blogs")
     .once("value")
     .then(snap => snap.val())
     .then(data => {
-      req.data = data;
-      req.list = data;
+      let temp = [];
       for (let item in data) {
-        if (data[item].type === "featured") {
+        temp.push(data[item]);
+      }
+      req.data = temp;
+      req.list = temp;
+      return data;
+    })
+    .then(data => {
+      for (let item in data) {
+        if (data[item].type === 0) {
           req.featured = data[item];
           return;
         }
