@@ -3,24 +3,26 @@ extends layout
 block content
     br
     div#app
-        .form-row
-            .form-group.col-md-6
-                label(for='inputEmail4') Name
-                input#inputEmail4.form-control(type='text', placeholder='Name' v-model='name')
-            .form-group.col-md-6
-                label(for='inputPassword4') Email
-                input#inputPassword4.form-control(type='email', placeholder='Email' v-model='email')
-        .form-group
-                label(for='inputAddress') Subject
-                input#inputAddress.form-control(type='text', placeholder='Subject' v-model='subject')
-        .form-group 
-                label(for='inputAddress2') Message
-                textarea.form-control(rows="3", placeholder='Your Message' v-model='message')
-        button.btn.btn-primary.float-right(v-on:click='send') Send
+        form(v-on:submit='send')
+            .form-row
+                .form-group.col-md-6
+                    label(for='inputEmail4') Name
+                    input#inputEmail4.form-control(type='text', placeholder='Name' v-model='name' required='')
+                .form-group.col-md-6
+                    label(for='inputPassword4') Email
+                    input#inputPassword4.form-control(type='email', placeholder='Email' v-model='email' required='')
+            .form-group
+                    label(for='inputAddress') Subject
+                    input#inputAddress.form-control(type='text', placeholder='Subject' v-model='subject' required='')
+            .form-group 
+                    label(for='inputAddress2') Message
+                    textarea.form-control(rows="3", placeholder='Your Message' v-model='message' required='')
+            button.btn.btn-primary.float-right(type='submit') Send
         br
         br
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css")
     script(src='https://code.jquery.com/jquery-2.2.4.min.js', integrity='sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=', crossorigin='anonymous')
     script(src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js")
     script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js')
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     script(src="/js/contact.js")
