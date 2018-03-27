@@ -15,3 +15,12 @@ block content
     br
     div
         p= data.content[0].body
+    div.row.justify-content-between
+        div.col-4
+            if earlier
+                div.text-left
+                    a(href=earlier.slug) Earlier Post
+        div.col-4
+            if next
+                div.text-right 
+                    a(href=next.slug) Next Post
