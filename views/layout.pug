@@ -22,12 +22,14 @@ html
                 div.col-sm
                     div.text-right.header-link
                         form(action="/search", method="get")
-                            div
-                                .input-group
-                                    input#example-search-input.form-control.py-2.border-right-0.border(type='search', name='post', placeholder='search')
-                                    span.input-group-append
-                                    button.btn.btn-outline-secondary.border-left-0.border(type='submit')
-                                        i.fa.fa-search
+                            .row
+                                .col-xs-6.ml-auto
+                                    div
+                                        .input-group
+                                            input#example-search-input.form-control.py-2.border-right-0.border(type='search', name='post', placeholder='search')
+                                            span.input-group-append
+                                            button.btn.btn-outline-secondary.border-left-0.border(type='submit')
+                                                i.fa.fa-search
 
 
 
