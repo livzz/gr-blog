@@ -7,16 +7,16 @@ block content
             .form-row
                 .form-group.col-md-6
                     label(for='inputEmail4') Name
-                    input#inputEmail4.form-control(type='text', placeholder='Name' v-model='name' required='')
+                    input#inputEmail.form-control(type='text', placeholder='Name' v-model='name' required='' minlength=4)
                 .form-group.col-md-6
                     label(for='inputPassword4') Email
-                    input#inputPassword4.form-control(type='email', placeholder='Email' v-model='email' required='')
+                    input#inputPassword.form-control(type='email', placeholder='Email' v-model='email' required='')
             .form-group
                     label(for='inputAddress') Subject
-                    input#inputAddress.form-control(type='text', placeholder='Subject' v-model='subject' required='')
+                    input#inputAddress.form-control(type='text', placeholder='Subject' v-model='subject' required='' minlength=5)
             .form-group 
                     label(for='inputAddress2') Message
-                    textarea.form-control(rows="3", placeholder='Your Message' v-model='message' required='')
+                    textarea#inputMessage.form-control(rows="3", placeholder='Your Message' v-model='message' required='' minlength=10)
             button.btn.btn-primary.float-right(type='submit') Send
         br
         br

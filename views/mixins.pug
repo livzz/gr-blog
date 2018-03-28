@@ -1,12 +1,12 @@
 mixin article-cards(one, two)
     div.row
-        div.col
+        div.col-sm
             div
                 img.img-thumbnail.image(src= one.content[0].image, alt= one.title)
                 a(href="/post/"+one.slug).h3= one.title
                 br
                 p= one.summary
-        div.col
+        div.col-sm
             if two
                 div
                     img.img-thumbnail.image(src= two.content[0].image, alt= two.title)

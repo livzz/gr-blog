@@ -36,7 +36,15 @@ new Vue({
             subject: this.subject,
             message: this.message
           })
-          .then(toastr.success("We will get in touch soon!!"));
+          .then(() => toastr.success("We will get in touch soon!!"))
+          .then(() => {
+            (this.name = ""),
+              (this.email = ""),
+              (this.subject = ""),
+              (this.message = "");
+            return;
+          })
+          .catch(() => toastr.error("Please try Again!!"));
       }
     }
   }

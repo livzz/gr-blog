@@ -5,8 +5,6 @@ exports.firebaseMiddleware = (req, res, next) => {
     .once("value")
     .then(snap => snap.val())
     .then(data => {
-      // req.next = null;
-      // req.earlier = null;
       let found = false;
       for (let item in data) {
         if (data[item].slug === req.params.slug) {

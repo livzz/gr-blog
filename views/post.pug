@@ -15,6 +15,11 @@ block content
     br
     div
         p= data.content[0].body
+        - for(let  i = 1; i< data.content.length; i++) {
+            div.post-image.text-center
+                img(src= data.content[i].image, alt= data.title)
+            p= data.content[i].body
+        -}
     div.row.justify-content-between
         div.col-4
             if earlier

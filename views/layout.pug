@@ -13,16 +13,26 @@ html
         br
         div.container
             div.row
-                div.col
+                div.col-sm
                     div.text-left.header-link
                         a(href='http://www.globalreach.in/') Go to Global Reach Home
-                div.col
+                div.col-sm
                     div.h2.text-center
                         a(href='/') Blog
-                div.col
+                div.col-sm
                     div.text-right.header-link
                         form(action="/search", method="get")
-                            input(type="text" name="post" placeholder="Search..")
+                            div
+                                .input-group
+                                    input#example-search-input.form-control.py-2.border-right-0.border(type='search', name='post', placeholder='search')
+                                    span.input-group-append
+                                    button.btn.btn-outline-secondary.border-left-0.border(type='submit')
+                                        i.fa.fa-search
+
+
+
+
+
         br
         ul.nav.justify-content-center
             li.nav-item
