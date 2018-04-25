@@ -8,7 +8,7 @@ block content
         div.col
             div.post-header
                 h3= data.title
-                div.d-inline 17th March, 2018
+                div.d-inline= data.date
                 div.d-inline &nbsp &nbsp &nbsp
                 div.d-inline By - 
                     span= data.author
@@ -16,8 +16,9 @@ block content
     div
         p= data.content[0].body
         - for(let  i = 1; i< data.content.length; i++) {
-            div.post-image.text-center
-                img(src= data.content[i].image, alt= data.title)
+            if data.content[i].image
+                div.post-image.mx-auto.d-block
+                    img(src= data.content[i].image, alt= data.title)
             p= data.content[i].body
         -}
     div.row.justify-content-between

@@ -15,7 +15,7 @@ exports.firebaseMiddleware = (req, res, next) => {
     })
     .then(data => {
       for (let item in data) {
-        if (data[item].type === 0) {
+        if (data[item].type === 1) {
           req.featured = data[item];
           return;
         }

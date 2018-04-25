@@ -6,8 +6,9 @@ html
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm', crossorigin='anonymous')
         script(defer='', src='https://use.fontawesome.com/releases/v5.0.8/js/solid.js', integrity='sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l', crossorigin='anonymous')
         script(defer='', src='https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js', integrity='sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c', crossorigin='anonymous')
+        <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600,700|Lato:400,700" rel="stylesheet">
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js")
         link(rel='stylesheet', href='/css/main.css')
-        //- <script src="//localhost:35729/livereload.js"></script>
         title Global Reach Blog Page
     body
         br
@@ -15,20 +16,21 @@ html
             div.row
                 div.col-sm
                     div.text-left.header-link
-                        a(href='http://www.globalreach.in/') Go to Global Reach Home
+                        a.d-md-block.d-sm-block.d-xs-block.d-lg-none(href='http://www.globalreach.in/') Go to GR
+                        a.d-none.d-lg-block(href='http://www.globalreach.in/') Go to Global Reach Home
                 div.col-sm
                     div.h2.text-center
-                        a(href='/') Blog
+                        img.logo(src="https://firebasestorage.googleapis.com/v0/b/gr-blog-42a8e.appspot.com/o/logo%2FGR_logo-01.png?alt=media&token=d588f84f-d525-4b04-8fe4-6ee83deaebf0", alt="")
                 div.col-sm
                     div.text-right.header-link
                         form(action="/search", method="get")
                             .row
                                 .col-xs-6.ml-auto
                                     div
-                                        .input-group
-                                            input#example-search-input.form-control.py-2.border-right-0.border(type='search', name='post', placeholder='search')
+                                        div#search.input-group
+                                            input#example-search-input.form-control.py-2.border-right-0.border-0(type='search', name='post' placeholder="search")
                                             span.input-group-append
-                                            button.btn.btn-outline-secondary.border-left-0.border(type='submit')
+                                            button.btn.btn-outline-secondary.border-left-0.border-0(type='submit')
                                                 i.fa.fa-search
 
 
