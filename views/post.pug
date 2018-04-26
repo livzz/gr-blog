@@ -2,10 +2,10 @@ extends layout
 
 block content
     div.row.align-items-center.justify-content-center
-        div.col
+        div.col-md
             div.post-image
-                img(src= data.content[0].image, alt= data.title)
-        div.col
+                img.img-fluid(src= data.content[0].image, alt= data.title)
+        div.col-md
             div.post-header
                 h3= data.title
                 div.d-inline= data.date
@@ -13,20 +13,24 @@ block content
                 div.d-inline By - 
                     span= data.author
     br
-    div
-        p= data.content[0].body
+    div.post-body
+        p.text-justify= data.content[0].body
         - for(let  i = 1; i< data.content.length; i++) {
             if data.content[i].image
                 div.post-image.mx-auto.d-block
-                    img(src= data.content[i].image, alt= data.title)
-            p= data.content[i].body
+                    img.img-fluid(src= data.content[i].image, alt= data.title)
+            p.text-justify= data.content[i].body
         -}
     div.row.justify-content-between
         div.col-4
             if earlier
                 div.text-left
-                    a(href=earlier.slug) Earlier Post
+                    a(href=earlier.slug)
+                        <i class="fas fa-chevron-left"></i>
+                        |    Earlier Post
         div.col-4
             if next
                 div.text-right 
-                    a(href=next.slug) Next Post
+                    a(href=next.slug)
+                        |    Next Post
+                        <i class="fas fa-chevron-right"></i>

@@ -11,7 +11,7 @@ block content
         else 
             h4.section-header Result:
         div.row
-            div.col-md-8
+            div.col-lg-8
                 - if (data.length !== 0){
                 - for (var i = 0; i < data.length ; i+=2) {
                     - if(data.length === i+1 && data.length % 2 !== 0) {
@@ -25,7 +25,7 @@ block content
                     div
                         .text-center Sorry no post found!! 
                 -}
-            div#article-list.col.d-none.d-md-block
+            div#article-list.col.d-none.d-lg-block
                 div.text-white
                     p Our Latest Articles:
                         - for (var i = 0; i < list.slice(0,4).length ; i++) {
