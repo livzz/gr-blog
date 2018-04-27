@@ -1,15 +1,13 @@
-div.row#featured
+div.row#featured.justify-content-center
     div.col-md
         img(src= featured.content[0].image, alt= featured.title)
     div.col-md
-        div
-            h3 #{featured.title}
-            div.d-inline #{featured.date}
-            div.d-inline &nbsp &nbsp &nbsp
-            div.d-inline By - #{featured.author} 
-            br
-            br
-            p #{featured.summary}
-            br
-            div.d-flex.align-items-end
-                a(href="/post/"+featured.slug).btn.btn-info.text-white Read More
+        h3 #{featured.title}
+        div.d-inline #{featured.date}
+            span.overlay
+        div.d-inline &nbsp &nbsp &nbsp
+        div.d-inline By - #{featured.author} 
+            span.overlay
+        p.my-2 #{featured.summary}
+        div.d-flex.align-items-end.my-4
+            a(href="/post/"+featured.slug).btn Read Full Article

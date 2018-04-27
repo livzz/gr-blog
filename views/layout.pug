@@ -7,12 +7,19 @@ html
         script(defer='', src='https://use.fontawesome.com/releases/v5.0.8/js/solid.js', integrity='sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l', crossorigin='anonymous')
         script(defer='', src='https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js', integrity='sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c', crossorigin='anonymous')
         <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600,700|Lato:400,700" rel="stylesheet">
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer='')
         link(rel='stylesheet', href='/css/main.css')
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js" defer=''></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
+        <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" />
+
         title Global Reach Blog Page
     body
         br
         div.container
+            div.container.search-box
+                form(action="/search", method="get")
+                    input(type='search', name='post' placeholder="search")
             div.row
                 div.col.d-none.d-lg-block
                     div.text-left.header-link
@@ -22,17 +29,8 @@ html
                         img.logo(src="https://firebasestorage.googleapis.com/v0/b/gr-blog-42a8e.appspot.com/o/logo%2FGR_logo-01.png?alt=media&token=d588f84f-d525-4b04-8fe4-6ee83deaebf0", alt="")
                 div.col
                     div.text-right.header-link
-                        div#searchButton
-                            i.fa.fa-search
-                        //- form(action="/search", method="get")
-                        //-     .row
-                        //-         .col-xs-6.ml-auto
-                        //-             div
-                        //-                 div#search.input-group
-                        //-                     input#example-search-input.form-control.py-2.border-right-0.border-0(type='search', name='post' placeholder="search")
-                        //-                     span.input-group-append
-                        //-                     button.btn.btn-outline-secondary.border-left-0.border-0(type='submit')
-                        //-                         i.fa.fa-search
+                        div
+                            img#searchButton(src="https://firebasestorage.googleapis.com/v0/b/gr-blog-42a8e.appspot.com/o/logo%2Fsearch_icon.png?alt=media&token=7f58af9b-53f5-4042-a0a8-b62b44cab4ae", alt="")
 
 
 
@@ -57,7 +55,4 @@ html
             br
             block content
                 p This is the default Page
-            br
-            br
-            br
     script(src="/js/search.js" defer)
