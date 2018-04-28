@@ -8,7 +8,7 @@ block content
         div.col-md
             div.post-header
                 h3= data.title
-                div.d-inline= data.date
+                div.d-inline= data.timestamp
                     span.overlay
                 div.d-inline &nbsp &nbsp &nbsp
                 div.d-inline By - #{data.author}
@@ -25,16 +25,16 @@ block content
     <div id="share" class="text-center"></div>
     script(src="/js/share.js" defer='')
     div.row.justify-content-between.my-4
-        div.col-4
+        div.col-6
             if earlier
                 div.text-left
                     a(href=earlier.slug)
-                        <i class="fas fa-chevron-left mr-2"></i>
+                        <i class="fa fa-chevron-left mr-2"></i>
                         |    Earlier Post
-        div.col-4
+        div.col-6
             if next
                 div.text-right 
                     a(href=next.slug)
                         |    Next Post
-                        <i class="fas fa-chevron-right ml-2"></i>
+                        <i class="fa fa-chevron-right ml-2"></i>
     

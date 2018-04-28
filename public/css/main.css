@@ -367,7 +367,7 @@ input:focus {
   outline: none;
 }
 
-/* overlay */
+/* Search */
 .overlay {
   background-color: #c2fff0;
   z-index: -1;
@@ -378,4 +378,26 @@ input:focus {
   top: 0;
   left: 0;
   padding: 10px 0;
+}
+
+#searchButton {
+  width: 7%;
+}
+
+@media (max-width: 768px) {
+  #searchButton {
+    width: 9%;
+  }
+}
+
+@media (max-width: 480px) {
+  #searchButton {
+    width: 12%;
+  }
+}
+
+@media (max-width: 333px) {
+  #searchButton {
+    width: 15%;
+  }
 }
