@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "serverless deploy",
-    "start": "nodemon -e pug,css,js"
+    "start": "cross-env DEV=TRUE nodemon -e pug,css,js"
   },
   "keywords": [],
   "author": "",

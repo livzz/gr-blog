@@ -39,6 +39,10 @@ app.use(errorHandlers.developmentErrors);
 app.use(errorHandlers.productionErrors);
 
 // For local serving
-app.listen(3000, () => console.log("Example app listening on port 3000!"));
+if (process.env.DEV) {
+  app.listen(3000, () => console.log("Example app listening on port 3000!"));
+} else {
+  module.exports.handler = serverless(app);
+}
 // For aws serverless serving
 // module.exports.handler = serverless(app);
