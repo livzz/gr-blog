@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "serverless deploy",
-    "start": "cross-env DEV=TRUE nodemon -e pug,css,js"
+    "dev": "cross-env DEV=TRUE nodemon -e pug,css,js"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +29,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.1.4",
     "grunt": "^1.0.2",
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-watch": "^1.0.0",
